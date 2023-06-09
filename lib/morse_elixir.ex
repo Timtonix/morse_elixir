@@ -25,12 +25,12 @@ defmodule MorseElixir do
 
   def morse_to_text([head | tail]) do
     text = Map.get(@morse_to_alphabet, head, "")
-    text <> morse_to_alphabet(tail)
+    text <> morse_to_text(tail)
   end
 
   def morse_to_text(morse)do
     String.split(morse, " ")
-    |> morse_to_alphabet()
+    |> morse_to_text()
   end
 
 end

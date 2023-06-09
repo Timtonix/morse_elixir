@@ -3,6 +3,6 @@ defmodule MorseElixirTest do
   doctest MorseElixir
 
   test "assert convert morse to text" do
-    assert MorseElixir.morse_to_alphabet("... --- ...") == "SOS"
+    assert MorseElixir.morse_to_text("... --- ...") == "SOS"
   end
 end
