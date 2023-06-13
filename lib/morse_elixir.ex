@@ -16,7 +16,7 @@ defmodule MorseElixir do
     "Y" => "-.--", "Z" => "--..", "0" => "-----", "1" => ".----", "2" => "..---", "3" => "...--", "4" => "....-",
     "5" => ".....", "6" => "-....", "7" => "--...", "8" => "---..", "9" => "----.", "." => ".-.-.-",
     "?" => "..--..", "'" => ".----.", "!" => "-.-.-----.",
-    "(" => "-.--.", ")" => "-.--.-", "&" => ".-...", " =>" => "---...", " " => "/"}
+    "(" => "-.--.", ")" => "-.--.-", "&" => ".-...", " " => "/"}
 
 
   def morse_to_text([]) do
@@ -31,6 +31,21 @@ defmodule MorseElixir do
   def morse_to_text(morse)do
     String.split(morse, " ")
     |> morse_to_text()
+  end
+
+  def text_to_morse([]) do
+    ""
+  end
+
+  def text_to_morse([head | tail]) do
+    morse = Map.get(@alphabet_to_morse, head, "")
+    morse <> " " <> text_to_morse(tail)
+  end
+
+  def text_to_morse(text) do
+    String.split(text, "")
+    |> text_to_morse()
+    |> String.trim()
   end
 
 end
