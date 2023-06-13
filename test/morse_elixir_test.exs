@@ -23,5 +23,10 @@ defmodule MorseElixirTest do
     assert MorseElixir.text_to_morse("SOS TIM") == "... --- ... / - .. --"
   end
 
+  test "assert convert text with unexpected character to morse" do
+    # The * is changed in a space...
+    assert MorseElixir.text_to_morse("SOS *TIM") == "... --- ... /  - .. --"
+  end
+
 
 end
