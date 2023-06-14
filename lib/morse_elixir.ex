@@ -48,6 +48,14 @@ defmodule MorseElixir do
     |> String.trim()
   end
 
+  def is_morse?([head | tail]) when tail === [] do
+    IO.inspect(head)
+    if String.contains?(head, [".", "-", " ", "/"]) do
+      true
+    else
+      false
+    end
+  end
 
   def is_morse?([head | tail]) do
     if String.contains?(head, ["", ".", "-", " ", "/"]) do
