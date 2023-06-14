@@ -43,10 +43,23 @@ defmodule MorseElixir do
   end
 
   def text_to_morse(text) do
-    String.split(text, "")
+    String.graphemes(text)
     |> text_to_morse()
     |> String.trim()
   end
 
+
+  def is_morse?([head | tail]) do
+    if String.contains?(head, ["", ".", "-", " ", "/"]) do
+      is_morse?(tail)
+    else
+      false
+    end
+  end
+
+  def is_morse?(string) do
+    list = String.graphemes(string)
+    is_morse?(list)
+  end
 end
 

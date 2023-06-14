@@ -32,6 +32,16 @@ defmodule MorseElixirTest do
     assert MorseElixir.text_to_morse("") == ""
   end
 
+  test "assert 'a' is not a morse string" do
+    assert MorseElixir.is_morse?("a") == false
+  end
+
+  test "assert '... --- ...' is a morse string" do
+    assert MorseElixir.is_morse?("... --- ...") == true
+  end
+
+
+
 
 
 
