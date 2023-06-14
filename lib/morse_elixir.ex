@@ -65,6 +65,8 @@ defmodule MorseElixir do
     end
   end
 
+  def is_morse?(string) when string === "", do: false
+
   def is_morse?(string) do
     list = String.graphemes(string)
     is_morse?(list)
