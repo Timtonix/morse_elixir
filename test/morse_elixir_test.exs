@@ -28,5 +28,13 @@ defmodule MorseElixirTest do
     assert MorseElixir.text_to_morse("SOS *TIM") == "... --- ... /  - .. --"
   end
 
+  test "assert convert text that is '' empty, to an empty morse code" do
+    assert MorseElixir.text_to_morse("") == ""
+  end
+
+
+
+
+
 
 end
