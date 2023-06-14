@@ -49,7 +49,6 @@ defmodule MorseElixir do
   end
 
   def is_morse?([head | tail]) when tail === [] do
-    IO.inspect(head)
     if String.contains?(head, [".", "-", " ", "/"]) do
       true
     else
