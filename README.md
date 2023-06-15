@@ -1,6 +1,19 @@
 # MorseElixir
+This lib is related to [mosrse_traductor](https://github.com/anonymecrasher/morse_traductor).
 
-**TODO: Add description**
+Example:
+- convert morse to text:
+```elixir
+iex> MorseElixir.morse_to_text(".... . .-.. .-.. --- / .-- --- .-. .-.. -..")
+"HELLO WORLD"
+```
+
+- convert text to morse:
+```elixir
+iex> MorseElixir.text_to_morse("HELLO WORLD")
+".... . .-.. .-.. --- / .-- --- .-. .-.. -.."
+```
+
 
 ## Installation
 
