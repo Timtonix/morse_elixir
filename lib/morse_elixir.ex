@@ -38,7 +38,7 @@ defmodule MorseElixir do
   end
 
   def text_to_morse([head | tail]) do
-    morse = Map.get(@alphabet_to_morse, head, "")
+    morse = Map.get(@alphabet_to_morse, String.upcase(head), "")
     morse <> " " <> text_to_morse(tail)
   end
 
