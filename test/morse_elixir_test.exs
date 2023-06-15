@@ -32,6 +32,10 @@ defmodule MorseElixirTest do
     assert MorseElixir.text_to_morse("") == ""
   end
 
+  test "assert convert text that is 'allo' in lowercase, to morse" do
+    assert MorseElixir.text_to_morse("allo") == ".- .-.. .-.. ---"
+  end
+
   test "assert 'a' is not a morse string" do
     assert MorseElixir.is_morse?("a") == false
   end
