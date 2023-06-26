@@ -37,19 +37,19 @@ defmodule MorseElixirTest do
   end
 
   test "assert 'a' is not a morse string" do
-    assert MorseElixir.is_morse?("a") == false
+    assert MorseElixir.morse?("a") == false
   end
 
   test "assert '... --- ...' is a morse string" do
-    assert MorseElixir.is_morse?("... --- ...") == true
+    assert MorseElixir.morse?("... --- ...") == true
   end
 
   test "assert '' is not morse string" do
-    assert MorseElixir.is_morse?("") == false
+    assert MorseElixir.morse?("") == false
   end
 
   test "assert '... --- o...' is not morse string" do
-    assert MorseElixir.is_morse?("... --- o...") == false
+    assert MorseElixir.morse?("... --- o...") == false
   end
 
 

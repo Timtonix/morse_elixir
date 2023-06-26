@@ -48,27 +48,23 @@ defmodule MorseElixir do
     |> String.trim()
   end
 
-  def is_morse?([head | tail]) when tail === [] do
+  def morse?([head | tail]) when tail === [] do
+    head in [".", "-", " ", "/"]
+  end
+
+  def morse?([head | tail]) do
     if String.contains?(head, [".", "-", " ", "/"]) do
-      true
+      morse?(tail)
     else
       false
     end
   end
 
-  def is_morse?([head | tail]) do
-    if String.contains?(head, [".", "-", " ", "/"]) do
-      is_morse?(tail)
-    else
-      false
-    end
-  end
+  def morse?(string) when string === "", do: false
 
-  def is_morse?(string) when string === "", do: false
-
-  def is_morse?(string) do
+  def morse?(string) do
     list = String.graphemes(string)
-    is_morse?(list)
+    morse?(list)
   end
 end
 
