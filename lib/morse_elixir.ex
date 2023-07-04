@@ -48,6 +48,10 @@ defmodule MorseElixir do
     |> String.trim()
   end
 
+  def morse?("" = _string), do: false
+  def morse?([] = _charlist), do: false
+
+
   def morse?([head | tail]) when tail === [] do
     head in [".", "-", " ", "/"]
   end
@@ -59,8 +63,6 @@ defmodule MorseElixir do
       false
     end
   end
-
-  def morse?(string) when string === "", do: false
 
   def morse?(string) do
     list = String.graphemes(string)
